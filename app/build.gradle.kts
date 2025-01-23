@@ -43,6 +43,7 @@ android {
 
 dependencies {
     implementation(project(":core:design"))
+    implementation(project(":feature:pokemon"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -52,6 +53,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(libs.hilt.android)
+    implementation(project(":feature:pokemon"))
     ksp(libs.hilt.android.compiler)
 
     testImplementation(libs.junit)

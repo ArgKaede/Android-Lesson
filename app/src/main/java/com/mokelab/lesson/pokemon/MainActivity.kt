@@ -7,7 +7,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.mokelab.lesson.core.design.theme.PokemonListTheme
-import com.mokelab.lesson.pokemon.feature.pokemon.PokemonListViewModel
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -16,8 +15,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PokemonListTheme {
-                    PokemonListScreen(
-                        viewModel = PokemonListViewModel())
+                PokemonListScreen()
             }
         }
     }
