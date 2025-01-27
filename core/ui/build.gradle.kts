@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mokelab.training.app2025.core.ui"
+    namespace = "com.mokelab.lesson.pokemon.core.ui"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {

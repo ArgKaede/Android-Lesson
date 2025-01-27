@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.mokelab.lesson.pokemon.core.data.PokemonRepository
 import com.mokelab.lesson.pokemon.core.model.Pokemon
 import dagger.hilt.android.lifecycle.HiltViewModel
-import jakarta.inject.Inject
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -36,6 +36,7 @@ class PokemonListViewModel @Inject constructor(
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
+                e.printStackTrace()
                 _uiState.value = UiState.Error(e)
             }
         }

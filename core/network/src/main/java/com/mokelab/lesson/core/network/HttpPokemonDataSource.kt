@@ -14,10 +14,9 @@ import javax.inject.Singleton
 @Singleton
 class HttpPokemonDataSource @Inject constructor(
     private val client: HttpClient,
-    @Named("baseUrl") private val baseUrl: String,
 ) : NetworkPokemonDataSource {
     override suspend fun fetch(startTimeMillis: Long): List<NetworkPokemon> {
-        val resp = client.get(Url("${baseUrl}/getPokemon?t=${startTimeMillis}"))
+        val resp = client.get(Url("https://moke-battle-log.web.app/poke-ja.json"))
         if (resp.status.value != 200) {
             throw NetworkException(
                 status = resp.status.value,

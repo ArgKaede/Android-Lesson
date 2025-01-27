@@ -1,4 +1,4 @@
-package com.mokelab.training.app2025.core.network.model
+package com.mokelab.lesson.core.network.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

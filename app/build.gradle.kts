@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.mokelab.training.app2025"
+    namespace = "com.mokelab.lesson.pokemon"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.mokelab.training.app2025"
+        applicationId = "com.mokelab.lesson.pokemon"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
@@ -43,6 +43,8 @@ android {
 
 dependencies {
     implementation(project(":core:design"))
+    implementation(project(":core:data"))
+    implementation(project(":core:network"))
     implementation(project(":feature:pokemon"))
 
     implementation(libs.androidx.core.ktx)
@@ -53,8 +55,10 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(libs.hilt.android)
-    implementation(project(":feature:pokemon"))
     ksp(libs.hilt.android.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+
+    implementation(libs.ktor.client.cio)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

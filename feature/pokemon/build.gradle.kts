@@ -2,10 +2,12 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
-    namespace = "com.mokelab.training.app2025.feature.article"
+    namespace = "com.mokelab.lesson.pokemon.feature.pokemon"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -45,6 +47,7 @@ dependencies {
 
     implementation(libs.androidx.ui.tooling)
     implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)

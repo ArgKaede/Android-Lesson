@@ -8,10 +8,12 @@ class MockPokemonDataSource @Inject constructor() : NetworkPokemonDataSource {
             NetworkPokemon(
                 id = "30",
                 name = "フシギバナ",
+                createdAtMillis = 1736730000000L,
             ),
             NetworkPokemon(
                 id = "60",
                 name = "リザードン",
+                createdAtMillis = 1736211600000L,
             ),
         )
     }
