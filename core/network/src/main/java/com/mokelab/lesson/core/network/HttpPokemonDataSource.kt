@@ -15,6 +15,11 @@ import javax.inject.Singleton
 class HttpPokemonDataSource @Inject constructor(
     private val client: HttpClient,
 ) : NetworkPokemonDataSource {
+    private val parser = Json {
+        ignoreUnknownKeys = true
+    }
+
+
     override suspend fun fetch(startTimeMillis: Long): List<NetworkPokemon> {
         val resp = client.get(Url("https://moke-battle-log.web.app/poke-ja.json"))
         if (resp.status.value != 200) {
@@ -23,8 +28,8 @@ class HttpPokemonDataSource @Inject constructor(
                 body = resp.body(),
             )
         }
-        val respBody: FetchResponse = Json.decodeFromString(resp.body())
-        return respBody.pokemons
+        val parsed: FetchResponse = parser.decodeFromString(resp.body())
+        return parsed.pokemons
     }
 }
 
