@@ -11,7 +11,7 @@ fun PokemonItem(
     modifier: Modifier = Modifier,
 ) {
     TextListItem(
-        headline = pokemon.id,
+        headline = "#" + pokemon.id.value.toString().padStart(4, '0'),
         trailing = pokemon.name,
         modifier = modifier,
     )

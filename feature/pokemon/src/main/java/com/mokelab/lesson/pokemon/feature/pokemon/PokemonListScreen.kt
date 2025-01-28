@@ -105,11 +105,11 @@ private fun Preview() {
             uiState = PokemonListViewModel1.UiState.Success(
                 pokemons = listOf(
                     Pokemon(
-                        id = PokemonId("#0003").toString(),
+                        id = PokemonId(3),
                         name = "フシギバナ",
                     ),
                     Pokemon(
-                        id = PokemonId("#0006").toString(),
+                        id = PokemonId(6),
                         name = "リザードン",
                     ),
                 )

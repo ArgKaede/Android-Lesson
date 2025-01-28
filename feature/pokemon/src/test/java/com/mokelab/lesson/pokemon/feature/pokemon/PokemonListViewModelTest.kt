@@ -5,6 +5,7 @@ import com.mokelab.lesson.pokemon.core.data.PokemonRepository
 import io.mockk.coEvery
 import io.mockk.mockk
 import com.mokelab.lesson.pokemon.core.model.Pokemon
+import com.mokelab.lesson.pokemon.core.model.PokemonId
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
@@ -42,7 +43,7 @@ class PokemonListViewModelTest {
 
         coEvery { repo.load() } returns listOf(
             Pokemon(
-                id = "30",
+                id = PokemonId(3),
                 name = "フシギバナ"
             )
         )
@@ -91,7 +92,7 @@ class PokemonListViewModelTest {
 
         coEvery { repo.load() } returns listOf(
             Pokemon(
-                id = "30",
+                id = PokemonId(3),
                 name = "フシギバナ"
             )
         )
